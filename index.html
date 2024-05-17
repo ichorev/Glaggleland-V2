@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Park Management Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Theme Park Management Game</h1>
+        <div class="controls">
+            <button onclick="showAddAttractionModal()">Add Attraction</button>
+            <button onclick="showSetTicketPriceModal()">Set Ticket Price</button>
+            <button onclick="runDay()">Run Day</button>
+            <button onclick="showStatus()">Show Status</button>
+        </div>
+        <div id="gameStatus"></div>
+        <div id="themePark"></div>
+    </div>
+
+    <div id="addAttractionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addAttractionModal')">&times;</span>
+            <h2>Add Attraction</h2>
+            <form id="addAttractionForm">
+                <label for="attractionName">Name:</label>
+                <input type="text" id="attractionName" name="attractionName" required><br>
+                <label for="attractionCost">Cost:</label>
+                <input type="number" id="attractionCost" name="attractionCost" required><br>
+                <label for="attractionIncome">Income per Visitor:</label>
+                <input type="number" id="attractionIncome" name="attractionIncome" required><br>
+                <label for="attractionMaintenance">Maintenance Cost per Day:</label>
+                <input type="number" id="attractionMaintenance" name="attractionMaintenance" required><br>
+                <button type="button" onclick="addAttraction()">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="setTicketPriceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('setTicketPriceModal')">&times;</span>
+            <h2>Set Ticket Price</h2>
+            <form id="setTicketPriceForm">
+                <label for="ticketPrice">New Ticket Price:</label>
+                <input type="number" id="ticketPrice" name="ticketPrice" required><br>
+                <button type="button" onclick="setTicketPrice()">Set Price</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
